@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<br><br>
+<div id="editor">
+<form action="/save" method="POST">
+    <div id="titAuth">
+    <input type="text" name="title" placeholder="Tittle" required/>
+    <input type="text" name="author" placeholder="Author" required/>
+    </div>
+    <textarea name="content" placeholder="Content" required>
+    </textarea>
+    <button id="editSubmit" type="submit">Submit</button>
+</form>
+</div>
+<br><br>
+<%- include("partials/footer.ejs") %>

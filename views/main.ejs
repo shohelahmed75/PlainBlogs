@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<br><br>
+<div id="blogList">
+<% blogs.forEach(blog => { %>
+<a href="/blog/<%= blog.id %>" >
+    <div class="blogCont">
+        <h2 class="blogTitle"><%= blog.title %></h2>
+        <p class="blogContent"><%= blog.content %></p>
+        <h4 class="blogAuthor"><%= blog.author %></h5>
+    </div>
+</a>
+<% }) %>
+</div>
+<br><br>
+<%- include("partials/footer.ejs") %>

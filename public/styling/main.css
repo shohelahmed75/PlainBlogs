@@ -1,0 +1,194 @@
+body{
+    background: linear-gradient(-45deg, #73ff9d, #70d9ff, #7199ff, #c58ff4);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navBtn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.navBar{
+    background-color: #ffffff68;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 1vw;
+    padding-left: 1.5vw;
+    align-items: center;
+    height: 3.5vw;
+    width: 100vw;
+    position: fixed;
+}
+
+a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#blogList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(40vw,1fr));
+    gap: 3vw;
+    margin-top: 7vh;
+    padding-left: 1.5vw;
+}
+
+.blogCont{
+    width: 40vw;
+    height: 35vh;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vh;
+    background: linear-gradient(-45deg, #ffffff4c, #ffffff68, #ffffff81, #ffffffa4);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+}
+
+.blogContent{
+    grid-column: span 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 19vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0.5vw;
+}
+
+.blogAuthor{
+    margin-top: 4vh;
+    margin-left: 0.5vw;
+}
+
+.blogTitle{
+    margin-left: 0.5vw;
+}
+
+#edlSubmit{
+    width: 6vw;
+    height: 5.5vh;
+    border: 2px solid  #ffffff6f;
+    border-radius: 1px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(-45deg, #73ff9d7b, #70d9ff74, #7199ff79, #c58ff474);
+    background-size: 3000% 3000%;
+    animation: gradientBG 30s ease infinite;
+}
+
+#edlCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    gap: 1.5vw;
+}
+
+#editor{
+    margin-top: 5vh;
+    margin-left: 2vw;
+}
+
+form{
+    display: inline;
+}
+
+#titAuth{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 4vh;
+    gap: 2vw;
+}
+
+input[name="title"]{
+    width: 20vw;
+    border: 3px solid  #ffffff6f;
+    border-radius: 3px;
+    background: linear-gradient(-45deg, #d1d1d1, #e3e3e3, #f3f3f3, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+}
+
+input[name="author"]{
+    width: 20vw;
+    border: 3px solid  #ffffff6f;
+    border-radius: 3px;
+    background: linear-gradient(-45deg, #d1d1d1, #e3e3e3, #f3f3f3, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+}
+
+textarea[name="content"]{
+    width: 80vw;
+    height: 50vh;
+    border: 5px solid  #ffffff6f;
+    border-radius: 5px;
+    margin-top: 3vh;
+    margin-right: 18.5vw;
+    background: linear-gradient(-45deg, #d1d1d1, #e3e3e3, #f3f3f3, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+
+}
+
+#editSubmit{
+    width: 7vw;
+    height: 5vh;
+    border: 5px solid  #ffffff6f;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1.5vh;
+    background: linear-gradient(-45deg, #d1d1d1, #e3e3e3, #f3f3f3, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+}
+
+#cr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    background: none;
+    margin-top: 12.5vh;
+}
+
+.snlBlogCont{
+    position: relative;
+    top: 10vh;
+    width: 92vw;
+    height: auto;
+    margin-left: 2vw;
+    padding: 2vw;
+    border-radius: 0.5vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3vh;
+    background: linear-gradient(-45deg, #ffffff4c, #ffffff68, #ffffff81, #ffffffa4);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
