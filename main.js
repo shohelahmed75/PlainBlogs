@@ -13,7 +13,13 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 const blogsFile = __dirname + "/blogs.json";
-var blogs = [];
+const sequenceFile = __dirname + "/sequence.json";
+
+let blogs = {};
+let sequence = {
+    blog_seq: 1
+};
+
 if (fs.existsSync(blogsFile)) {
     const oldData = fs.readFileSync(blogsFile, "utf-8");
     if (oldData.trim().length > 0) {
@@ -21,10 +27,25 @@ if (fs.existsSync(blogsFile)) {
     }
 }
 
+if (fs.existsSync(sequenceFile)) {
+    const oldData = fs.readFileSync(sequenceFile, "utf-8");
+    if (oldData.trim().length > 0) {
+        sequence = JSON.parse(oldData);
+    }
+}
+
 function saveBlogs(){
     fs.writeFileSync(blogsFile,
         JSON.stringify(blogs, null, 2)
     );
+}
+
+function getBlogId() {
+    const id = sequence.blog_seq++;
+    fs.writeFileSync(sequenceFile,
+        JSON.stringify(sequence, null, 2)
+    );
+    return id;
 }
 
 app.get("/", (req,res) => {
@@ -69,7 +90,7 @@ app.post("/edited/:id", (req, res) => {
 app.post("/save", (req,res) => {
     const {title, content, author} = req.body;
     const newBlog = {
-        id: blogs.length + 1,
+        id: getBlogId(),
         title,
         content,
         author
@@ -87,5 +108,5 @@ app.post("/delete", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at ${port}`);
+    console.log(`Server running at ${port}\nOpen http://localhost:${port} in your browser to start`);
 });
