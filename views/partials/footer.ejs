@@ -1,5 +1,22 @@
-<div id="cr">
-  Made by Shohel
-</div>
+<footer>
+  <div id="cr">
+    © 2025 PlainBlogs - Made with ❤️ by Shohel
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add fade-in class to blog entries for animation
+    const blogItems = document.querySelectorAll('.blogCont');
+    blogItems.forEach(item => {
+      item.classList.add('fade-in');
+    });
+
+    // Add fade-in class to single blog view
+    const singleBlog = document.querySelector('.snlBlogCont');
+    if (singleBlog) {
+      singleBlog.classList.add('fade-in');
+    }
+  });
+</script>
 </body>
 </html>

@@ -1,15 +1,25 @@
 <%- include("partials/header.ejs") %>
-<br><br>
-<div id="blogList">
-<% blogs.forEach(blog => { %>
-<a href="/blog/<%= blog.id %>" >
-    <div class="blogCont">
-        <h2 class="blogTitle"><%= blog.title %></h2>
-        <p class="blogContent"><%= blog.content %></p>
-        <h4 class="blogAuthor"><%= blog.author %></h5>
-    </div>
-</a>
-<% }) %>
-</div>
-<br><br>
+
+<main>
+  <div id="blogList">
+    <% if (blogs.length === 0) { %>
+      <div class="empty-state">
+        <h2>No blogs yet!</h2>
+        <p>Get started by creating your first blog post.</p>
+        <a href="/new" class="btn btn-primary">Create Blog</a>
+      </div>
+    <% } else { %>
+      <% blogs.forEach(blog => { %>
+        <a href="/blog/<%= blog.id %>" class="blog-link">
+          <div class="blogCont">
+            <h2 class="blogTitle"><%= blog.title %></h2>
+            <p class="blogContent"><%= blog.content %></p>
+            <h4 class="blogAuthor"><%= blog.author %></h4>
+          </div>
+        </a>
+      <% }) %>
+    <% } %>
+  </div>
+</main>
+
 <%- include("partials/footer.ejs") %>
